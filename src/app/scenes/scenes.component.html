@@ -1,9 +1,6 @@
-<ul class="scenes">
-    <li *ngFor="let scene of scenes">
-        <!-- <a routerLink="/detail/{{hero.id}}">
-            <span class="badge">{{hero.id}}</span> {{hero.name}}
-        </a>
-        <button class="delete" title="delete hero" (click)="delete(hero)">x</button> -->
-        <span>{{scene.name}}</span>
-    </li>
-</ul>
+<mat-action-list>
+    <mat-list-item *ngFor="let scene of scenes" routerLink="/detail/{{scene.id}}">
+        <img matListAvatar src="{{'https://proef.diligentia-uitgeverij.be/' + scene.preview}}" alt="...">
+        <h3 matLine> {{scene.name}} </h3>
+    </mat-list-item>
+</mat-action-list>
