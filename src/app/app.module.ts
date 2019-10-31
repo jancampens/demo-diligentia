@@ -8,6 +8,8 @@ import { ScenesComponent } from './scenes/scenes.component';
 import { SceneDetailComponent } from './scene-detail/scene-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MaterialModule} from './material-module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
