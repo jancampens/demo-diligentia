@@ -22,8 +22,8 @@ export class SceneService {
     private http: HttpClient,
   ) { }
 
-  getScenes(): Observable<Scenes> {
-    return this.http.get<Scenes>(this.apiUrl + '/scenes')
+  getScenes(limit = 0, skip = 0): Observable<Scenes> {
+    return this.http.get<Scenes>(`${this.apiUrl}/scenes/${limit}/${skip}`)
       .pipe(
         catchError(this.handleError<Scenes>('getScenes'))
       );
