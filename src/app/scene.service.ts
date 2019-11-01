@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Scene } from './scene';
+import { Scenes } from './scenes';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,10 @@ export class SceneService {
     private http: HttpClient,
   ) { }
 
-  getScenes(): Observable<Scene[]> {
-    return this.http.get<Scene[]>(this.apiUrl + '/scenes')
+  getScenes(): Observable<Scenes> {
+    return this.http.get<Scenes>(this.apiUrl + '/scenes')
       .pipe(
-        catchError(this.handleError<Scene[]>('getScenes', []))
+        catchError(this.handleError<Scenes>('getScenes'))
       );
   }
 
