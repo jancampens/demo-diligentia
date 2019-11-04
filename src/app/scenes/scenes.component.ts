@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Scene } from '../models/scene';
 import { Scenes } from '../models/scenes';
 
 import { SceneService } from '../scene.service';

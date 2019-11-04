@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatListModule } from '@angular/material/list';
-import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
     exports: [
-        MatListModule,
         MatPaginatorModule,
+        MatListModule,
     ]
 })
 

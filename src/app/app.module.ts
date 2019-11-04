@@ -1,26 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScenesComponent } from './scenes/scenes.component';
-import { SceneDetailComponent } from './scene-detail/scene-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SceneDetailComponent } from './scene-detail/scene-detail.component';
+import { ScenesComponent } from './scenes/scenes.component';
 
-import {MaterialModule} from './material-module';
+import { MaterialModule } from './material-module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SceneDetailComponent,
     ScenesComponent,
-    SceneDetailComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     BrowserAnimationsModule,
+    BrowserModule,
+    HttpClientModule,
     MaterialModule
   ],
   providers: [],
