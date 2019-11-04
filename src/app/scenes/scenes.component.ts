@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Scene } from '../scene';
+import { Scenes } from '../scenes';
+
 import { SceneService } from '../scene.service';
 
 @Component({
@@ -9,7 +11,10 @@ import { SceneService } from '../scene.service';
   styleUrls: ['./scenes.component.css']
 })
 export class ScenesComponent implements OnInit {
-  scenes: Scene[];
+  scenes: Scenes;
+  limit = 20;
+  skip = 0;
+  length: number;
 
   constructor(
     private sceneService: SceneService
@@ -20,8 +25,17 @@ export class ScenesComponent implements OnInit {
   }
 
   getScenes(): void {
-    this.sceneService.getScenes()
-      .subscribe(scenes => this.scenes = scenes.scenes);
+    this.sceneService.getScenes(this.limit, this.skip)
+      .subscribe(scenes => {
+        this.length = scenes.pages * this.limit;
+        this.scenes = scenes;
+      });
+  }
+
+  handlePage(event) {
+    this.skip = event.pageIndex * event.pageSize;
+    this.limit = event.pageSize;
+    this.getScenes();
   }
 
 }

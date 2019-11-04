@@ -1,6 +1,16 @@
-<mat-action-list>
-    <mat-list-item *ngFor="let scene of scenes" routerLink="/detail/{{scene.id}}">
-        <img matListAvatar src="{{'https://proef.diligentia-uitgeverij.be/' + scene.preview}}" alt="...">
-        <h3 matLine> {{scene.name}} </h3>
-    </mat-list-item>
-</mat-action-list>
+<div *ngIf="scenes">
+    <mat-action-list>
+        <mat-list-item *ngFor="let scene of scenes.scenes" routerLink="/detail/{{scene.id}}">
+            <img matListAvatar src="{{'https://proef.diligentia-uitgeverij.be/' + scene.preview}}" alt="...">
+            <h3 matLine> {{scene.name}} </h3>
+        </mat-list-item>
+    </mat-action-list>
+
+    <mat-paginator
+        showFirstLastButtons=true
+        [length]=length
+        [pageSize]=limit
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        (page)="handlePage($event)">
+    </mat-paginator>
+</div>
