@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { SceneDetails } from '../scene-details';
+import { SceneDetails } from '../models/scene-details';
 import { SceneService } from '../scene.service';
 
 import { fabric } from 'fabric';

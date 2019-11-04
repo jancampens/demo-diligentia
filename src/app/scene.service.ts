@@ -4,8 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { SceneDetails } from './scene-details';
-import { Scenes } from './scenes';
+import { SceneDetails } from './models/scene-details';
+import { Scenes } from './models/scenes';
 
 @Injectable({
   providedIn: 'root'
