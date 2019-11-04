@@ -11,7 +11,7 @@ import { SceneService } from '../scene.service';
 })
 export class ScenesComponent implements OnInit {
   scenes: Scenes;
-  limit = 20;
+  limit = 10;
   skip = 0;
   length: number;
 
