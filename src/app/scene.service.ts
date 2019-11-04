@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Scene } from './scene';
+import { SceneDetails } from './scene-details';
 import { Scenes } from './scenes';
 
 @Injectable({
@@ -29,10 +29,10 @@ export class SceneService {
       );
   }
 
-  getScene(id: string): Observable<Scene> {
+  getScene(id: string): Observable<SceneDetails> {
     const url = `${this.apiUrl}/scene/${id}`;
-    return this.http.get<Scene>(url).pipe(
-      catchError(this.handleError<Scene>(`getScene id=${id}`))
+    return this.http.get<SceneDetails>(url).pipe(
+      catchError(this.handleError<SceneDetails>(`getScene id=${id}`))
     );
   }
 
